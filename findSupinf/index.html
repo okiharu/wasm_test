@@ -1,0 +1,42 @@
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<script src="wasm_exec.js"></script>
+		<script src="index.js"></script>
+		<script>
+			const go = new Go();
+			WebAssembly.instantiateStreaming(fetch("main.wasm"), go.importObject).then((result) => {
+				go.run(result.instance);
+			});
+		</script>
+	</head>
+	<body>
+		<h1>Find SUPINF</h1>
+		<p>ランダムに生成された文字列の中からSUPINFの数を取得する</p>
+		<table>
+			<tr>
+				<td><input type = "number" id ="num" value="10000"></td>
+				<td><button onClick= "create();init();">文字列生成</button></td>
+			</tr>
+			<tr>
+				<td>Method</td>
+				<td>Record</td>
+				<td>Average</td>
+			</tr>
+			<tr>
+				<td><button onClick="findByGo()">wasmで検索</button></td>
+				<td><input type = "number" id ="spdGo">ms</td>
+				<td><input type = "number" id ="avgGo">ms</td>
+			</tr>
+			<tr>
+				<td><button onCLick="findByJs()">JSで検索</button></td>
+				<td><input type = "number" id ="spdJs">ms</td>
+				<td><input type = "number" id ="avgJs">ms</td>
+			</tr>
+			<tr>
+				<td>結果:<input size="10"id="result">件</td>
+			</tr>
+		</table>
+		<textarea rows="10" cols="70" id="randomStr"></textarea>
+	</body>
+</html>
