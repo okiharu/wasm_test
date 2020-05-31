@@ -1,6 +1,9 @@
 # wasm_test
 
-A program to find a SUPINF from a randomly generated string.
+A program to find 'SUPINF' from a randomly generated string.
+
+I made this to verify the difference in processing speed between JavaScript and WebAssembly. 
+The results are only a guide.
 
 ## Getting Started
 At /etc/wasm_test/findSupinf
