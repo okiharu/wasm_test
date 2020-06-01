@@ -6,9 +6,10 @@ I made this to verify the difference in processing speed between JavaScript and 
 The results are only a guide.
 
 ## Getting Started
-At /etc/wasm_test/findSupinf
+Go to the findSupinf directory:
 
 ```
+cd $HOME/src/github.com/okiharu/wasm_test/findSupinf
 $ GOOS=js GOARCH=wasm go build -o main.wasm
 $ go run ../server.go .
 ```
