@@ -9,7 +9,7 @@ The results are only a guide.
 Go to the findSupinf directory:
 
 ```
-cd $HOME/src/github.com/okiharu/wasm_test/findSupinf
+$ cd $HOME/src/github.com/okiharu/wasm_test/findSupinf
 $ GOOS=js GOARCH=wasm go build -o main.wasm
 $ go run ../server.go .
 ```
